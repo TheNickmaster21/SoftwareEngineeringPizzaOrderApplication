@@ -36,6 +36,8 @@ namespace SoftwareEngineeringPizzaOrderApplication {
         
         private global::System.Data.DataRelation relationFK_Order_ToTable;
         
+        private global::System.Data.DataRelation relationFK_OrderItem_ToTable;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -272,6 +274,7 @@ namespace SoftwareEngineeringPizzaOrderApplication {
             }
             this.relationFK_Customer_ToTable = this.Relations["FK_Customer_ToTable"];
             this.relationFK_Order_ToTable = this.Relations["FK_Order_ToTable"];
+            this.relationFK_OrderItem_ToTable = this.Relations["FK_OrderItem_ToTable"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -298,6 +301,10 @@ namespace SoftwareEngineeringPizzaOrderApplication {
                         this.tableCustomer.phone_numberColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrder.customerColumn}, false);
             this.Relations.Add(this.relationFK_Order_ToTable);
+            this.relationFK_OrderItem_ToTable = new global::System.Data.DataRelation("FK_OrderItem_ToTable", new global::System.Data.DataColumn[] {
+                        this.tableOrder.order_numberColumn}, new global::System.Data.DataColumn[] {
+                        this.tableOrderItem.orderColumn}, false);
+            this.Relations.Add(this.relationFK_OrderItem_ToTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1532,13 +1539,16 @@ namespace SoftwareEngineeringPizzaOrderApplication {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrderItemRow AddOrderItemRow(int order, string item, int quantity) {
+            public OrderItemRow AddOrderItemRow(OrderRow parentOrderRowByFK_OrderItem_ToTable, string item, int quantity) {
                 OrderItemRow rowOrderItemRow = ((OrderItemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        order,
+                        null,
                         item,
                         quantity};
+                if ((parentOrderRowByFK_OrderItem_ToTable != null)) {
+                    columnValuesArray[1] = parentOrderRowByFK_OrderItem_ToTable[0];
+                }
                 rowOrderItemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderItemRow);
                 return rowOrderItemRow;
@@ -2025,6 +2035,17 @@ namespace SoftwareEngineeringPizzaOrderApplication {
             public void SetcompletedNull() {
                 this[this.tableOrder.completedColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public OrderItemRow[] GetOrderItemRows() {
+                if ((this.Table.ChildRelations["FK_OrderItem_ToTable"] == null)) {
+                    return new OrderItemRow[0];
+                }
+                else {
+                    return ((OrderItemRow[])(base.GetChildRows(this.Table.ChildRelations["FK_OrderItem_ToTable"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2082,6 +2103,17 @@ namespace SoftwareEngineeringPizzaOrderApplication {
                 }
                 set {
                     this[this.tableOrderItem.quantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public OrderRow OrderRow {
+                get {
+                    return ((OrderRow)(this.GetParentRow(this.Table.ParentRelations["FK_OrderItem_ToTable"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_OrderItem_ToTable"]);
                 }
             }
         }
