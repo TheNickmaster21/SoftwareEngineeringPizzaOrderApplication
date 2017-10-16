@@ -211,7 +211,7 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.mdf
+# *.mdf # Pay no attention to this terrible mistake
 *.ldf
 
 # Business Intelligence projects
