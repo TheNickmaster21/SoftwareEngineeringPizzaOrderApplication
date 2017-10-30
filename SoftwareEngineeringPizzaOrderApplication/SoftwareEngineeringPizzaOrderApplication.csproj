@@ -81,6 +81,12 @@
     <Compile Include="CustomerViewForm.Designer.cs">
       <DependentUpon>CustomerViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerInfoInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerInfoInputForm.Designer.cs">
+      <DependentUpon>CustomerInfoInputForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomerViewForm.resx">
       <DependentUpon>CustomerViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerInfoInputForm.resx">
+      <DependentUpon>CustomerInfoInputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
