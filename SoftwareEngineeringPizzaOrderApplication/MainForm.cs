@@ -34,5 +34,35 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
         }
 
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm(this);
+            menuForm.Show();
+            this.Hide();
+        }
+
+        private void OrdersButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerViewForm customerViewForm = new CustomerViewForm(this);
+            customerViewForm.Show();
+            this.Hide();
+        }
+
+        private void NewCustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerInfoInputForm customerInfoInputForm = new CustomerInfoInputForm(this);
+            customerInfoInputForm.Show();
+            this.Hide();
+        }
+
+        private void quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

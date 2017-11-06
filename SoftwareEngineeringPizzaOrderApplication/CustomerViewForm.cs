@@ -12,8 +12,11 @@ namespace SoftwareEngineeringPizzaOrderApplication
 {
     public partial class CustomerViewForm : Form
     {
-        public CustomerViewForm()
+        MainForm mainForm;
+
+        public CustomerViewForm(MainForm mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -23,6 +26,12 @@ namespace SoftwareEngineeringPizzaOrderApplication
             this.customerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.pizzaApplicationDatabaseDataSet);
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            mainForm.Show();
+            this.Close();
         }
     }
 }

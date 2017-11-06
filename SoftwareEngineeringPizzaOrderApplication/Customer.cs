@@ -26,7 +26,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
         public int address { get; set; }
         public string card_type { get; set; }
     
-        public virtual Address Address1 { get; set; }
+        public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
     }
