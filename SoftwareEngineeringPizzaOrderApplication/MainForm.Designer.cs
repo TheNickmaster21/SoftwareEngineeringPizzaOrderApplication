@@ -108,7 +108,7 @@
             this.NewCustomerButton.Location = new System.Drawing.Point(3, 16);
             this.NewCustomerButton.Name = "NewCustomerButton";
             this.NewCustomerButton.Size = new System.Drawing.Size(329, 23);
-            this.NewCustomerButton.TabIndex = 4;
+            this.NewCustomerButton.TabIndex = 1;
             this.NewCustomerButton.Text = "Register New Customer";
             this.NewCustomerButton.UseVisualStyleBackColor = true;
             this.NewCustomerButton.Click += new System.EventHandler(this.NewCustomerButton_Click);
@@ -118,7 +118,7 @@
             this.MenuButton.Location = new System.Drawing.Point(3, 45);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(329, 23);
-            this.MenuButton.TabIndex = 1;
+            this.MenuButton.TabIndex = 2;
             this.MenuButton.Text = "Order as Customer";
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -128,7 +128,7 @@
             this.OrderButton.Location = new System.Drawing.Point(3, 74);
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(329, 23);
-            this.OrderButton.TabIndex = 2;
+            this.OrderButton.TabIndex = 3;
             this.OrderButton.Text = "View Orders";
             this.OrderButton.UseVisualStyleBackColor = true;
             this.OrderButton.Click += new System.EventHandler(this.OrdersButton_Click);
@@ -138,7 +138,7 @@
             this.CustomerButton.Location = new System.Drawing.Point(3, 103);
             this.CustomerButton.Name = "CustomerButton";
             this.CustomerButton.Size = new System.Drawing.Size(329, 23);
-            this.CustomerButton.TabIndex = 3;
+            this.CustomerButton.TabIndex = 4;
             this.CustomerButton.Text = "View Customers";
             this.CustomerButton.UseVisualStyleBackColor = true;
             this.CustomerButton.Click += new System.EventHandler(this.CustomerButton_Click);

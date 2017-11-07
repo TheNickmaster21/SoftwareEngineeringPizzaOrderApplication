@@ -32,14 +32,9 @@ namespace SoftwareEngineeringPizzaOrderApplication
                 throw new Exception("Customer must have a last name!");
             }
 
-            if (customer.Address == null)
+            if (customer.address <= 0)
             {
                 throw new Exception("Customer must have an address!");
-            }
-
-            if (customer.card_type == null)
-            {
-                throw new Exception("Customer must have a card type!");
             }
         }
 

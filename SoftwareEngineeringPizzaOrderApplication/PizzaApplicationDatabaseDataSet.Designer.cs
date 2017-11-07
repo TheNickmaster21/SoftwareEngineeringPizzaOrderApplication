@@ -969,7 +969,6 @@ namespace SoftwareEngineeringPizzaOrderApplication {
                 this.columnlast_name.AllowDBNull = false;
                 this.columnlast_name.MaxLength = 20;
                 this.columnaddress.AllowDBNull = false;
-                this.columncard_type.AllowDBNull = false;
                 this.columncard_type.MaxLength = 15;
             }
             
@@ -1909,7 +1908,12 @@ namespace SoftwareEngineeringPizzaOrderApplication {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string card_type {
                 get {
-                    return ((string)(this[this.tableCustomer.card_typeColumn]));
+                    if (this.Iscard_typeNull()) {
+                        return null;
+                    }
+                    else {
+                        return ((string)(this[this.tableCustomer.card_typeColumn]));
+                    }
                 }
                 set {
                     this[this.tableCustomer.card_typeColumn] = value;
@@ -1925,6 +1929,18 @@ namespace SoftwareEngineeringPizzaOrderApplication {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Customer_ToTable"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscard_typeNull() {
+                return this.IsNull(this.tableCustomer.card_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcard_typeNull() {
+                this[this.tableCustomer.card_typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3108,7 +3124,7 @@ SELECT phone_number, first_name, last_name, address, card_type FROM Customer WHE
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_address));
             if ((Original_card_type == null)) {
-                throw new global::System.ArgumentNullException("Original_card_type");
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_card_type));
@@ -3154,7 +3170,7 @@ SELECT phone_number, first_name, last_name, address, card_type FROM Customer WHE
             }
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(address));
             if ((card_type == null)) {
-                throw new global::System.ArgumentNullException("card_type");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(card_type));
@@ -3200,7 +3216,7 @@ SELECT phone_number, first_name, last_name, address, card_type FROM Customer WHE
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(address));
             if ((card_type == null)) {
-                throw new global::System.ArgumentNullException("card_type");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(card_type));
@@ -3225,7 +3241,7 @@ SELECT phone_number, first_name, last_name, address, card_type FROM Customer WHE
             }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_address));
             if ((Original_card_type == null)) {
-                throw new global::System.ArgumentNullException("Original_card_type");
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_card_type));

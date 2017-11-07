@@ -47,7 +47,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
         {
             validateAddress(address);
 
-            int id = (int) addressTableAdapter.InsertAndReturnIdQuery(
+            object id = addressTableAdapter.InsertAndReturnIdQuery(
                 address.line_1,
                 address.line_2,
                 address.line_3,
@@ -56,7 +56,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
                 address.country,
                 address.postal_code);
 
-            address.Id = id;
+            address.Id = Decimal.ToInt32((decimal) id);
 
             return address;
         }

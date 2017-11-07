@@ -56,9 +56,17 @@ namespace SoftwareEngineeringPizzaOrderApplication
             {
                 MessageBox.Show(exception.Message);
             }
+
+            MessageBox.Show("Saved " + customer.first_name + " " + customer.last_name + "!");
+            close();
         }
 
         private void close_Click(object sender, EventArgs e)
+        {
+            close();
+        }
+
+        private void close()
         {
             mainForm.Show();
             this.Close();

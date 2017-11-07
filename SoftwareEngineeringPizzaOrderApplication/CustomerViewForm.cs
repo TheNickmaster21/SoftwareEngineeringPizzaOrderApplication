@@ -18,14 +18,8 @@ namespace SoftwareEngineeringPizzaOrderApplication
         {
             this.mainForm = mainForm;
             InitializeComponent();
-        }
-
-        private void customerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customerBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pizzaApplicationDatabaseDataSet);
-
+            this.addressTableAdapter.Fill(this.pizzaApplicationDatabaseDataSet.Address);
+            this.customerTableAdapter.Fill(this.pizzaApplicationDatabaseDataSet.Customer);
         }
 
         private void back_Click(object sender, EventArgs e)
