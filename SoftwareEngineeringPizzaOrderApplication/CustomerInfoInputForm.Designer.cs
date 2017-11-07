@@ -318,7 +318,6 @@
             this.Controls.Add(this.label1);
             this.Name = "CustomerInfoInputForm";
             this.Text = " New Customer";
-            this.Load += new System.EventHandler(this.OrderViewForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pizzaApplicationDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);

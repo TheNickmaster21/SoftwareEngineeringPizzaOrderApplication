@@ -14,6 +14,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
     {
 
         MainForm mainForm;
+        MenuForm menuForm;
 
         CustomerProxy customerProxy = new CustomerProxy();
         AddressProxy addressProxy = new AddressProxy();
@@ -22,11 +23,14 @@ namespace SoftwareEngineeringPizzaOrderApplication
         {
             this.mainForm = mainForm;
             InitializeComponent();
+            this.FormClosed += this.closed;
         }
 
-        private void OrderViewForm_Load(object sender, EventArgs e)
+        public CustomerInfoInputForm(MenuForm menuForm)
         {
-
+            this.menuForm = menuForm;
+            InitializeComponent();
+            this.FormClosed += this.closed;
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -58,18 +62,28 @@ namespace SoftwareEngineeringPizzaOrderApplication
             }
 
             MessageBox.Show("Saved " + customer.first_name + " " + customer.last_name + "!");
-            close();
+            if (menuForm != null)
+            {
+                menuForm.giveCustomerPhoneNumber(customer.phone_number);
+            }
+            this.Close();
         }
 
         private void close_Click(object sender, EventArgs e)
         {
-            close();
+            this.Close();
         }
 
-        private void close()
+        private void closed(object sender, EventArgs e)
         {
-            mainForm.Show();
-            this.Close();
+            if (mainForm != null)
+            {
+                mainForm.Show();
+            }
+            else if (menuForm != null)
+            {
+                menuForm.Show();
+            }
         }
     }
 }
