@@ -57,7 +57,19 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
         private void fillOrder(Order order)
         {
+            decimal price = 0;
+            order.OrderItems = new List<OrderItem>();
 
+            foreach (string pizza in this.PizzaListBox.Items)
+            {
+                price += decimal.Parse(pizza.Substring(1, pizza.IndexOf('-')));
+
+                OrderItem orderItem = new OrderItem();
+                orderItem.quantity = 1;
+                orderItem.item = pizza.Substring(pizza.IndexOf('-'), pizza.Length - 1);
+
+                order.OrderItems.Add(orderItem);
+            }
         }
 
         private void RegisterNewCustomerButton_Click(object sender, EventArgs e)

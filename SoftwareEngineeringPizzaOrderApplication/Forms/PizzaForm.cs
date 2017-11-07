@@ -60,19 +60,29 @@ namespace SoftwareEngineeringPizzaOrderApplication
                 description = "Large Pizza w/ ";
             }
 
+            // Crust
+            if (this.deepRadio.Checked)
+            {
+                description += "Deep Dish Crust";
+            }
+            else // thin style
+            {
+                description += "Thin Style Crust";
+            }
+
             // Sauce
             if (this.redRadio.Checked)
             {
-                description += "Red Sauce";
+                description += ", Red Sauce";
 
             }
             else if (this.whiteRadio.Checked)
             {
-                description += "White Sauce";
+                description += ", White Sauce";
             }
             else // no sauce
             {
-                description += "No Sauce";
+                description += "";
             }
 
             // Toppings

@@ -50,9 +50,13 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.thinRadio = new System.Windows.Forms.RadioButton();
+            this.deepRadio = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toppingBox.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,7 +108,7 @@
             this.groupBox2.Controls.Add(this.noneRadio);
             this.groupBox2.Controls.Add(this.whiteRadio);
             this.groupBox2.Controls.Add(this.redRadio);
-            this.groupBox2.Location = new System.Drawing.Point(12, 65);
+            this.groupBox2.Location = new System.Drawing.Point(10, 118);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(313, 47);
             this.groupBox2.TabIndex = 4;
@@ -145,7 +149,7 @@
             // 
             // finishButton
             // 
-            this.finishButton.Location = new System.Drawing.Point(12, 215);
+            this.finishButton.Location = new System.Drawing.Point(12, 267);
             this.finishButton.Name = "finishButton";
             this.finishButton.Size = new System.Drawing.Size(75, 23);
             this.finishButton.TabIndex = 5;
@@ -155,7 +159,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(250, 215);
+            this.cancelButton.Location = new System.Drawing.Point(250, 267);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 6;
@@ -176,7 +180,7 @@
             this.toppingBox.Controls.Add(this.checkBox3);
             this.toppingBox.Controls.Add(this.checkBox2);
             this.toppingBox.Controls.Add(this.checkBox1);
-            this.toppingBox.Location = new System.Drawing.Point(12, 119);
+            this.toppingBox.Location = new System.Drawing.Point(12, 171);
             this.toppingBox.Name = "toppingBox";
             this.toppingBox.Size = new System.Drawing.Size(313, 90);
             this.toppingBox.TabIndex = 7;
@@ -293,11 +297,45 @@
             this.checkBox1.Text = "Extra Cheese";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.thinRadio);
+            this.groupBox3.Controls.Add(this.deepRadio);
+            this.groupBox3.Location = new System.Drawing.Point(10, 65);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(313, 47);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Crust";
+            // 
+            // thinRadio
+            // 
+            this.thinRadio.AutoSize = true;
+            this.thinRadio.Location = new System.Drawing.Point(88, 19);
+            this.thinRadio.Name = "thinRadio";
+            this.thinRadio.Size = new System.Drawing.Size(72, 17);
+            this.thinRadio.TabIndex = 1;
+            this.thinRadio.Text = "Thin Style";
+            this.thinRadio.UseVisualStyleBackColor = true;
+            // 
+            // deepRadio
+            // 
+            this.deepRadio.AutoSize = true;
+            this.deepRadio.Checked = true;
+            this.deepRadio.Location = new System.Drawing.Point(7, 20);
+            this.deepRadio.Name = "deepRadio";
+            this.deepRadio.Size = new System.Drawing.Size(75, 17);
+            this.deepRadio.TabIndex = 0;
+            this.deepRadio.TabStop = true;
+            this.deepRadio.Text = "Deep Dish";
+            this.deepRadio.UseVisualStyleBackColor = true;
+            // 
             // PizzaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 248);
+            this.ClientSize = new System.Drawing.Size(337, 298);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.toppingBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.finishButton);
@@ -311,6 +349,8 @@
             this.groupBox2.PerformLayout();
             this.toppingBox.ResumeLayout(false);
             this.toppingBox.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +379,8 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton thinRadio;
+        private System.Windows.Forms.RadioButton deepRadio;
     }
 }

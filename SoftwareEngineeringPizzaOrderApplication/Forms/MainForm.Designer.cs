@@ -39,7 +39,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.NewCustomerButton = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
-            this.OrderButton = new System.Windows.Forms.Button();
             this.CustomerButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pizzaApplicationDatabaseDataSet)).BeginInit();
@@ -95,12 +94,11 @@
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.NewCustomerButton);
             this.flowLayoutPanel1.Controls.Add(this.MenuButton);
-            this.flowLayoutPanel1.Controls.Add(this.OrderButton);
             this.flowLayoutPanel1.Controls.Add(this.CustomerButton);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 129);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(332, 107);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // NewCustomerButton
@@ -123,19 +121,9 @@
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // OrderButton
-            // 
-            this.OrderButton.Location = new System.Drawing.Point(3, 74);
-            this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(329, 23);
-            this.OrderButton.TabIndex = 3;
-            this.OrderButton.Text = "View Orders";
-            this.OrderButton.UseVisualStyleBackColor = true;
-            this.OrderButton.Click += new System.EventHandler(this.OrdersButton_Click);
-            // 
             // CustomerButton
             // 
-            this.CustomerButton.Location = new System.Drawing.Point(3, 103);
+            this.CustomerButton.Location = new System.Drawing.Point(3, 74);
             this.CustomerButton.Name = "CustomerButton";
             this.CustomerButton.Size = new System.Drawing.Size(329, 23);
             this.CustomerButton.TabIndex = 4;
@@ -145,7 +133,7 @@
             // 
             // quitButton
             // 
-            this.quitButton.Location = new System.Drawing.Point(250, 147);
+            this.quitButton.Location = new System.Drawing.Point(250, 125);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(94, 23);
             this.quitButton.TabIndex = 5;
@@ -157,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 179);
+            this.ClientSize = new System.Drawing.Size(356, 158);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.quitButton);
             this.Name = "MainForm";
@@ -183,7 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button MenuButton;
-        private System.Windows.Forms.Button OrderButton;
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button NewCustomerButton;
         private System.Windows.Forms.Button quitButton;
