@@ -60,5 +60,29 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
             return address;
         }
+
+        public Customer fillAddress(Customer customer)
+        {
+            if(customer.address <= 0)
+            {
+                throw new Exception("Cusotmer must have an address!");
+            }
+
+            PizzaApplicationDatabaseDataSet.AddressRow addressRow =
+                 addressTableAdapter.GetDataByAddressId(customer.address).Last();
+
+            Address address = new Address();
+            address.line_1 = addressRow.line_1;
+            address.line_2 = addressRow.line_2;
+            address.line_3 = addressRow.line_3;
+            address.city = addressRow.city;
+            address.state = addressRow.state;
+            address.country = addressRow.country;
+            address.postal_code = addressRow.postal_code;
+            customer.Address = address;
+
+            return customer;
+        }
+
     }
 }

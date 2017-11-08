@@ -53,7 +53,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
             foreach (OrderItem orderItem in order.OrderItems)
             {
                 orderItemTableAdapter.Insert(
-                    (int) id,
+                    Decimal.ToInt32((decimal)id),
                     orderItem.item,
                     orderItem.quantity);
             }

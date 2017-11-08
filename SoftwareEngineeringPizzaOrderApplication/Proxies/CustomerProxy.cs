@@ -17,17 +17,17 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
         public void validateCustomer(Customer customer)
         {
-            if (customer.phone_number == null && customer.phone_number != "")
+            if (customer.phone_number == null || customer.phone_number == "")
             {
                 throw new Exception("Customer must have a phone number!");
             }
 
-            if (customer.first_name == null)
+            if (customer.first_name == null || customer.first_name == "")
             {
                 throw new Exception("Customer must have a first name!");
             }
 
-            if (customer.last_name == null)
+            if (customer.last_name == null || customer.last_name == "")
             {
                 throw new Exception("Customer must have a last name!");
             }

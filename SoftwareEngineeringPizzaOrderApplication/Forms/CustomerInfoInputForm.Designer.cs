@@ -185,6 +185,7 @@
             this.country.Size = new System.Drawing.Size(52, 21);
             this.country.Sorted = true;
             this.country.TabIndex = 10;
+            this.country.SelectedIndex = 0;
             // 
             // state
             // 

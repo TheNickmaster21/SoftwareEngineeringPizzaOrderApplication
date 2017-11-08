@@ -37,12 +37,12 @@ namespace SoftwareEngineeringPizzaOrderApplication
         {
             Address address = new Address();
             address.city = this.city.Text;
-            address.country = this.country.SelectedText;
+            address.country = (string)this.country.Items[this.country.SelectedIndex];
             address.line_1 = this.line1.Text;
             address.line_2 = this.line2.Text;
             address.line_3 = this.line3.Text;
             address.postal_code = this.zipCode.Text;
-            address.state = this.state.SelectedText;
+            address.state = (string)this.state.Items[this.state.SelectedIndex];
 
             Customer customer = new Customer();
             customer.phone_number = this.phoneNumber.Text;
@@ -60,6 +60,7 @@ namespace SoftwareEngineeringPizzaOrderApplication
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+                return;
             }
 
             MessageBox.Show("Saved " + customer.first_name + " " + customer.last_name + "!");

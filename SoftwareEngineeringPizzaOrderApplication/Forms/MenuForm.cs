@@ -17,6 +17,8 @@ namespace SoftwareEngineeringPizzaOrderApplication
         private CustomerProxy customerProxy = new CustomerProxy();
         private OrderProxy orderProxy = new OrderProxy();
 
+        private Boolean overrideShowingMainForm = false;
+
         public MenuForm(MainForm mainForm)
         {
             this.mainForm = mainForm;
@@ -31,21 +33,17 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
         private void closed(object sender, EventArgs e)
         {
-            mainForm.Show();
+            if (!overrideShowingMainForm)
+            {
+                mainForm.Show();
+            }
         }
 
         private void CheckOutButton_Click(object sender, EventArgs e)
         {
             Order order = new Order();
+            order.time = DateTime.Now;
 
-            setCustomer(order);
-            fillOrder(order);
-
-            orderProxy.saveOrder(order);
-        }
-
-        private void setCustomer(Order order)
-        {
             Customer customer = customerProxy.getCustomer(this.phoneNumber.Text);
             if (customer == null)
             {
@@ -53,6 +51,22 @@ namespace SoftwareEngineeringPizzaOrderApplication
                 return;
             }
             order.customer = customer.phone_number;
+
+            fillOrder(order);
+
+            try
+            {
+                orderProxy.saveOrder(order);
+
+                OrderReceiptView orderReceiptView = new OrderReceiptView(mainForm, customer, order);
+                orderReceiptView.Show();
+                overrideShowingMainForm = true;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void fillOrder(Order order)
@@ -62,14 +76,52 @@ namespace SoftwareEngineeringPizzaOrderApplication
 
             foreach (string pizza in this.PizzaListBox.Items)
             {
-                price += decimal.Parse(pizza.Substring(1, pizza.IndexOf('-')));
+                price += decimal.Parse(pizza.Substring(1, pizza.IndexOf('-') - 2));
 
                 OrderItem orderItem = new OrderItem();
                 orderItem.quantity = 1;
-                orderItem.item = pizza.Substring(pizza.IndexOf('-'), pizza.Length - 1);
+                orderItem.item = pizza.Substring(pizza.IndexOf('-') + 2, pizza.Length - pizza.IndexOf('-') - 2);
 
                 order.OrderItems.Add(orderItem);
             }
+
+            if (this.largeNumeric.Value > 0)
+            {
+                OrderItem orderItem = new OrderItem();
+                orderItem.item = "Large Drink";
+                orderItem.quantity = (int)this.largeNumeric.Value;
+                price += (decimal)(2.19 * orderItem.quantity);
+                order.OrderItems.Add(orderItem);
+            }
+
+            if (this.MediumNumeric.Value > 0)
+            {
+                OrderItem orderItem = new OrderItem();
+                orderItem.item = "Medium Drink";
+                orderItem.quantity = (int)this.MediumNumeric.Value;
+                price += (decimal)(1.69 * orderItem.quantity);
+                order.OrderItems.Add(orderItem);
+            }
+
+            if (this.smallNumeric.Value > 0)
+            {
+                OrderItem orderItem = new OrderItem();
+                orderItem.item = "Small Drink";
+                orderItem.quantity = (int)this.smallNumeric.Value;
+                price += (decimal)(0.99 * orderItem.quantity);
+                order.OrderItems.Add(orderItem);
+            }
+
+            if (this.breadstickNumeric.Value > 0)
+            {
+                OrderItem orderItem = new OrderItem();
+                orderItem.item = "Breadsticks";
+                orderItem.quantity = (int)this.breadstickNumeric.Value;
+                price += (decimal)(4.99 * orderItem.quantity);
+                order.OrderItems.Add(orderItem);
+            }
+
+            order.price = (int)(price * 100);
         }
 
         private void RegisterNewCustomerButton_Click(object sender, EventArgs e)

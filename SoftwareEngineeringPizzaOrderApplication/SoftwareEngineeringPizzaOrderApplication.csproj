@@ -72,6 +72,12 @@
     <Compile Include="Address.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderReceiptView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderReceiptView.Designer.cs">
+      <DependentUpon>OrderReceiptView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proxies\AddressProxy.cs" />
     <Compile Include="Proxies\OrderProxy.cs" />
     <Compile Include="Proxies\CustomerProxy.cs" />
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderReceiptView.resx">
+      <DependentUpon>OrderReceiptView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PizzaForm.resx">
       <DependentUpon>PizzaForm.cs</DependentUpon>

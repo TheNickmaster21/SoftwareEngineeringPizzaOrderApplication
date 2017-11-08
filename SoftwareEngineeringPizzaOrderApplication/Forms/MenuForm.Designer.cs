@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.breadstickNumeric = new System.Windows.Forms.NumericUpDown();
+            this.smallNumeric = new System.Windows.Forms.NumericUpDown();
+            this.MediumNumeric = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.largeNumeric = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.CheckOutButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -52,10 +52,10 @@
             this.RemovePizzaButton = new System.Windows.Forms.Button();
             this.RegisterNewCustomerButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breadstickNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MediumNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.largeNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,9 +64,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.64706F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.35294F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown4, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.breadstickNumeric, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.smallNumeric, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.MediumNumeric, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label11, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label12, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.largeNumeric, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 220);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -89,41 +89,41 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(339, 105);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // numericUpDown4
+            // breadstickNumeric
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(275, 81);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.breadstickNumeric.Location = new System.Drawing.Point(275, 81);
+            this.breadstickNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown4.TabIndex = 25;
+            this.breadstickNumeric.Name = "breadstickNumeric";
+            this.breadstickNumeric.Size = new System.Drawing.Size(56, 20);
+            this.breadstickNumeric.TabIndex = 25;
             // 
-            // numericUpDown3
+            // smallNumeric
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(275, 55);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.smallNumeric.Location = new System.Drawing.Point(275, 55);
+            this.smallNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown3.TabIndex = 24;
+            this.smallNumeric.Name = "smallNumeric";
+            this.smallNumeric.Size = new System.Drawing.Size(56, 20);
+            this.smallNumeric.TabIndex = 24;
             // 
-            // numericUpDown2
+            // MediumNumeric
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(275, 29);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.MediumNumeric.Location = new System.Drawing.Point(275, 29);
+            this.MediumNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown2.TabIndex = 23;
+            this.MediumNumeric.Name = "MediumNumeric";
+            this.MediumNumeric.Size = new System.Drawing.Size(56, 20);
+            this.MediumNumeric.TabIndex = 23;
             // 
             // label2
             // 
@@ -213,17 +213,17 @@
             this.label12.Text = "$4.99";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // largeNumeric
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(275, 3);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.largeNumeric.Location = new System.Drawing.Point(275, 3);
+            this.largeNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown1.TabIndex = 22;
+            this.largeNumeric.Name = "largeNumeric";
+            this.largeNumeric.Size = new System.Drawing.Size(56, 20);
+            this.largeNumeric.TabIndex = 22;
             // 
             // label3
             // 
@@ -341,10 +341,10 @@
             this.Text = "Menu";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breadstickNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.smallNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MediumNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.largeNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,10 +368,10 @@
         private System.Windows.Forms.Button AddPizzaButton;
         private System.Windows.Forms.TextBox phoneNumber;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown breadstickNumeric;
+        private System.Windows.Forms.NumericUpDown smallNumeric;
+        private System.Windows.Forms.NumericUpDown MediumNumeric;
+        private System.Windows.Forms.NumericUpDown largeNumeric;
         private System.Windows.Forms.Button RemovePizzaButton;
         private System.Windows.Forms.Button RegisterNewCustomerButton;
     }
